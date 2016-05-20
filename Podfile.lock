@@ -1,12 +1,18 @@
 PODS:
+  - FlatUIKit (1.6.2)
+  - FontAwesome.swift (0.7.3)
   - SnapKit (0.15.0)
 
 DEPENDENCIES:
+  - FlatUIKit
+  - FontAwesome.swift
   - SnapKit (~> 0.15.0)
 
 SPEC CHECKSUMS:
+  FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
+  FontAwesome.swift: f694fe0f667d6d3390b5919cdb0556a27b75d427
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
 
-PODFILE CHECKSUM: 8497761d248acc404e51b2c31cbf6448d8356596
+PODFILE CHECKSUM: 5e99ac684482cab4e5023dd9e62f8840fa98afbe
 
 COCOAPODS: 1.0.0

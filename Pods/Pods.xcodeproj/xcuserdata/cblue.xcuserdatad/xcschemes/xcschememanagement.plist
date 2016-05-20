@@ -4,6 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FlatUIKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FontAwesome.swift-FontAwesome.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FontAwesome.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TrailerMaker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +42,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>306FADB010797BC09A6A4F16B81C22E0</key>
+		<key>1088253F42C36418734CF3D95E31B8AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95216330DABC911292AAFF96497C4011</key>
+		<key>9E64D3E3A7AD1A87C822114B7473AE1E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD0892BE565CA9D5A839B9137561277C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7D7704EEE60BFBB84295A140FF9AE0C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C2A1F92205CB42D98B92DCA11B6A33B2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D76488D0BE159E09EB3A66E373CD1492</key>
 		<dict>
 			<key>primary</key>
 			<true/>
