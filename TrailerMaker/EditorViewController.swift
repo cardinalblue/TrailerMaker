@@ -12,16 +12,16 @@ import SnapKit
 class EditorViewController: UIViewController {
 
     lazy var box = UIView()
+    lazy var bottomToolBar = UIToolbar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(box)
+        self.view.addSubview(bottomToolBar)
         
-        box.backgroundColor = UIColor.redColor()
-        box.snp_makeConstraints { make in
-            make.width.height.equalTo(50)
-            make.center.equalTo(self.view)
+        bottomToolBar.snp_makeConstraints { make in
+            make.leading.trailing.bottom.equalTo(self.view)
+            make.height.equalTo(44)
         }
     }
 
