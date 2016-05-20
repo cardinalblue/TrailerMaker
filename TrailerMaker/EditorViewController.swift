@@ -26,6 +26,8 @@ class EditorViewController: UIViewController {
     let session = AVCaptureSession.init()
     let preview = AVCaptureVideoPreviewLayer.init()
     let videoFileOutput = AVCaptureMovieFileOutput()
+    var player:AVPlayer!
+    var isPlaying:Bool! = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,7 @@ class EditorViewController: UIViewController {
             let button = UIButton()
             button.setTitle(c, forState: UIControlState.Normal)
             button.sizeToFit()
+            button.tag = clips.indexOf(c)!
             button.frame = CGRectMake(0, 0, CGRectGetWidth(button.frame) + 8, 34)
             button.backgroundColor = UIColor.turquoiseColor()
             button.addTarget(self, action: #selector(buttonClicked), forControlEvents: UIControlEvents.TouchUpInside)
@@ -127,10 +130,28 @@ class EditorViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        guard let path = NSBundle.mainBundle().pathForResource("demo", ofType:"mp4") else {
+            print("error")
+            return
+        }
+        
+        player = AVPlayer(URL: NSURL(fileURLWithPath: path))
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.trailerView.bounds
+        self.trailerView.layer.addSublayer(playerLayer)
+
     }
     
-    internal func buttonClicked() {
+    internal func buttonClicked(button:UIButton) {
+        print(button)
         
+        isPlaying = false
+        player.pause()
+        player.seekToTime(CMTime.init(seconds: Double(button.tag) * 10, preferredTimescale: (player.currentItem?.asset.duration.timescale)!))
+
+        stopRecord()
     }
     
     internal func record() {
@@ -143,7 +164,6 @@ class EditorViewController: UIViewController {
     }
     
     internal func done() {
-        
     }
     
     func recordVideo() {
@@ -152,55 +172,62 @@ class EditorViewController: UIViewController {
         let stopRecord = recordButton.tag == 1
         
         if doRecord {
-            recordButton.tag = 1
-            
-            // Preview
-            
-            preview.connection.videoOrientation = AVCaptureVideoOrientation.LandscapeRight
-            
-            preview.frame = recordView.bounds
-            recordView.layer.addSublayer(preview)
-            
-            session.startRunning()
-            
-            // Record
-            
-            let recordingDelegate:AVCaptureFileOutputRecordingDelegate? = self
-            
-            session.addOutput(videoFileOutput)
-            
-            let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
-            let filePath = documentsURL.URLByAppendingPathComponent("temp")
-            
-            videoFileOutput.startRecordingToOutputFileURL(filePath, recordingDelegate: recordingDelegate)
+            self.doRecord()
         }
         
         if (stopRecord) {
-            recordButton.tag = 0
-            
-            preview.removeFromSuperlayer()
-            
-            videoFileOutput.stopRecording()
-            session.removeOutput(videoFileOutput)
-            
-            session.stopRunning()
+            self.stopRecord()
         }
+    }
+    
+    private func doRecord() {
+        recordButton.tag = 1
+        recordButton.image =  UIImage.fontAwesomeIconWithName(.Pause, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
+
+
+        // Preview
         
+        preview.connection.videoOrientation = AVCaptureVideoOrientation.LandscapeRight
         
+        preview.frame = recordView.bounds
+        recordView.layer.addSublayer(preview)
+        
+        session.startRunning()
+        
+        // Record
+        
+        let recordingDelegate:AVCaptureFileOutputRecordingDelegate? = self
+        
+        session.addOutput(videoFileOutput)
+        
+        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        let filePath = documentsURL.URLByAppendingPathComponent("temp")
+        
+        videoFileOutput.startRecordingToOutputFileURL(filePath, recordingDelegate: recordingDelegate)
+    }
+    
+    private func stopRecord() {
+        recordButton.tag = 0
+        recordButton.image =  UIImage.fontAwesomeIconWithName(.Circle, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
+
+
+        preview.removeFromSuperlayer()
+        
+        videoFileOutput.stopRecording()
+        session.removeOutput(videoFileOutput)
+        
+        session.stopRunning()
     }
     
     private func playVideo() {
-        guard let path = NSBundle.mainBundle().pathForResource("demo", ofType:"mp4") else {
-            print("error")
-            return
+        if (!isPlaying) {
+            player.play()
+        }
+        else {
+            player.pause()
         }
         
-        let player = AVPlayer(URL: NSURL(fileURLWithPath: path))
-
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = self.trailerView.bounds
-        self.trailerView.layer.addSublayer(playerLayer)
-        player.play()
+        isPlaying = !isPlaying
     }
 }
 
