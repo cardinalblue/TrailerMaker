@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.whiteColor()
+        
         self.window?.rootViewController = TemplateViewController()
+        self.window?.rootViewController = UINavigationController.init(rootViewController: EditorViewController())
         self.window?.makeKeyAndVisible()
         
         return true

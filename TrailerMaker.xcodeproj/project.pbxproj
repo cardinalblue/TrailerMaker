@@ -16,6 +16,10 @@
 		44353E4F1CEEA42B007A502F /* TrailerMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44353E4E1CEEA42B007A502F /* TrailerMakerUITests.swift */; };
 		6B2B3DCD1CEEC3AD004636D8 /* TemplateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2B3DCB1CEEC3AD004636D8 /* TemplateCollectionViewCell.swift */; };
 		6B2B3DCE1CEEC3AD004636D8 /* TemplateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2B3DCC1CEEC3AD004636D8 /* TemplateCollectionViewCell.xib */; };
+		4464068A1CEEC2CF00B3C605 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446406891CEEC2CF00B3C605 /* EditorViewController.swift */; };
+		7B7917787D79B28491DA72FC /* Pods_TrailerMakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFF96A4F496EFE2E9EB05C7 /* Pods_TrailerMakerUITests.framework */; };
+		AEDB83636A1EF3C566C2DE0F /* Pods_TrailerMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3006AA9C9E03B6C6D7113CE /* Pods_TrailerMakerTests.framework */; };
+		DA244828C40598028FAA0C8B /* Pods_TrailerMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2202648EBEF3274ACB3B0A02 /* Pods_TrailerMaker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03D95906280449F7CDFDBCE2 /* Pods-TrailerMakerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailerMakerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailerMakerTests/Pods-TrailerMakerTests.release.xcconfig"; sourceTree = "<group>"; };
+		141AB6C698C7ECF8FD27D35D /* Pods-TrailerMakerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailerMakerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailerMakerUITests/Pods-TrailerMakerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		16E3F2DDF8FA501C447F3F68 /* Pods-TrailerMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailerMaker.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailerMaker/Pods-TrailerMaker.release.xcconfig"; sourceTree = "<group>"; };
+		2202648EBEF3274ACB3B0A02 /* Pods_TrailerMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailerMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44353E2B1CEEA42B007A502F /* TrailerMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrailerMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44353E2E1CEEA42B007A502F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44353E301CEEA42B007A502F /* TemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +59,12 @@
 		44353E501CEEA42B007A502F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B2B3DCB1CEEC3AD004636D8 /* TemplateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewCell.swift; sourceTree = "<group>"; };
 		6B2B3DCC1CEEC3AD004636D8 /* TemplateCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TemplateCollectionViewCell.xib; sourceTree = "<group>"; };
+		446406891CEEC2CF00B3C605 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		6D2EEC581CA137B29BB9D0CB /* Pods-TrailerMakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailerMakerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrailerMakerUITests/Pods-TrailerMakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		972259BBEA665360A61E4E45 /* Pods-TrailerMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailerMaker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrailerMaker/Pods-TrailerMaker.debug.xcconfig"; sourceTree = "<group>"; };
+		A3006AA9C9E03B6C6D7113CE /* Pods_TrailerMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailerMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE0F90BE9CF920CE9A32145A /* Pods-TrailerMakerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailerMakerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrailerMakerTests/Pods-TrailerMakerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BFFF96A4F496EFE2E9EB05C7 /* Pods_TrailerMakerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailerMakerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA244828C40598028FAA0C8B /* Pods_TrailerMaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEDB83636A1EF3C566C2DE0F /* Pods_TrailerMakerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B7917787D79B28491DA72FC /* Pods_TrailerMakerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +102,8 @@
 				44353E421CEEA42B007A502F /* TrailerMakerTests */,
 				44353E4D1CEEA42B007A502F /* TrailerMakerUITests */,
 				44353E2C1CEEA42B007A502F /* Products */,
+				92C58FBFB45CFC436AE987B7 /* Pods */,
+				9DDCB581185CF3B77C522226 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +124,7 @@
 				44353E301CEEA42B007A502F /* TemplateViewController.swift */,
 				6B2B3DCB1CEEC3AD004636D8 /* TemplateCollectionViewCell.swift */,
 				6B2B3DCC1CEEC3AD004636D8 /* TemplateCollectionViewCell.xib */,
+				446406891CEEC2CF00B3C605 /* EditorViewController.swift */,
 				44353E321CEEA42B007A502F /* Main.storyboard */,
 				44353E351CEEA42B007A502F /* Assets.xcassets */,
 				44353E371CEEA42B007A502F /* LaunchScreen.storyboard */,
@@ -131,6 +151,29 @@
 			path = TrailerMakerUITests;
 			sourceTree = "<group>";
 		};
+		92C58FBFB45CFC436AE987B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				972259BBEA665360A61E4E45 /* Pods-TrailerMaker.debug.xcconfig */,
+				16E3F2DDF8FA501C447F3F68 /* Pods-TrailerMaker.release.xcconfig */,
+				BE0F90BE9CF920CE9A32145A /* Pods-TrailerMakerTests.debug.xcconfig */,
+				03D95906280449F7CDFDBCE2 /* Pods-TrailerMakerTests.release.xcconfig */,
+				6D2EEC581CA137B29BB9D0CB /* Pods-TrailerMakerUITests.debug.xcconfig */,
+				141AB6C698C7ECF8FD27D35D /* Pods-TrailerMakerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9DDCB581185CF3B77C522226 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2202648EBEF3274ACB3B0A02 /* Pods_TrailerMaker.framework */,
+				A3006AA9C9E03B6C6D7113CE /* Pods_TrailerMakerTests.framework */,
+				BFFF96A4F496EFE2E9EB05C7 /* Pods_TrailerMakerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44353E531CEEA42B007A502F /* Build configuration list for PBXNativeTarget "TrailerMaker" */;
 			buildPhases = (
+				378F53FDB3D274E535E0B4FF /* 📦 Check Pods Manifest.lock */,
 				44353E271CEEA42A007A502F /* Sources */,
 				44353E281CEEA42A007A502F /* Frameworks */,
 				44353E291CEEA42A007A502F /* Resources */,
+				ADAEF7579A537F79DBFE04B0 /* 📦 Embed Pods Frameworks */,
+				B44C993E3843E492605E209F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,9 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44353E561CEEA42B007A502F /* Build configuration list for PBXNativeTarget "TrailerMakerTests" */;
 			buildPhases = (
+				69196FBAB5550B89ED150AF4 /* 📦 Check Pods Manifest.lock */,
 				44353E3B1CEEA42B007A502F /* Sources */,
 				44353E3C1CEEA42B007A502F /* Frameworks */,
 				44353E3D1CEEA42B007A502F /* Resources */,
+				6C1A8F48AC9F48F469911818 /* 📦 Embed Pods Frameworks */,
+				482351E2EE96E7395EA8AA12 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44353E591CEEA42B007A502F /* Build configuration list for PBXNativeTarget "TrailerMakerUITests" */;
 			buildPhases = (
+				7F8762343157C1E842194F1E /* 📦 Check Pods Manifest.lock */,
 				44353E461CEEA42B007A502F /* Sources */,
 				44353E471CEEA42B007A502F /* Frameworks */,
 				44353E481CEEA42B007A502F /* Resources */,
+				6BF50F81507944BEEE2A54FB /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +309,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		378F53FDB3D274E535E0B4FF /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		482351E2EE96E7395EA8AA12 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrailerMakerTests/Pods-TrailerMakerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69196FBAB5550B89ED150AF4 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6BF50F81507944BEEE2A54FB /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrailerMakerUITests/Pods-TrailerMakerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C1A8F48AC9F48F469911818 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrailerMakerTests/Pods-TrailerMakerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F8762343157C1E842194F1E /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ADAEF7579A537F79DBFE04B0 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrailerMaker/Pods-TrailerMaker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B44C993E3843E492605E209F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TrailerMaker/Pods-TrailerMaker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		44353E271CEEA42A007A502F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -265,6 +439,7 @@
 			files = (
 				44353E311CEEA42B007A502F /* TemplateViewController.swift in Sources */,
 				6B2B3DCD1CEEC3AD004636D8 /* TemplateCollectionViewCell.swift in Sources */,
+				4464068A1CEEC2CF00B3C605 /* EditorViewController.swift in Sources */,
 				44353E2F1CEEA42B007A502F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +582,7 @@
 		};
 		44353E541CEEA42B007A502F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 972259BBEA665360A61E4E45 /* Pods-TrailerMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TrailerMaker/Info.plist;
@@ -418,6 +594,7 @@
 		};
 		44353E551CEEA42B007A502F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16E3F2DDF8FA501C447F3F68 /* Pods-TrailerMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TrailerMaker/Info.plist;
@@ -429,6 +606,7 @@
 		};
 		44353E571CEEA42B007A502F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE0F90BE9CF920CE9A32145A /* Pods-TrailerMakerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TrailerMakerTests/Info.plist;
@@ -441,6 +619,7 @@
 		};
 		44353E581CEEA42B007A502F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03D95906280449F7CDFDBCE2 /* Pods-TrailerMakerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TrailerMakerTests/Info.plist;
@@ -453,6 +632,7 @@
 		};
 		44353E5A1CEEA42B007A502F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D2EEC581CA137B29BB9D0CB /* Pods-TrailerMakerUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TrailerMakerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -464,6 +644,7 @@
 		};
 		44353E5B1CEEA42B007A502F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 141AB6C698C7ECF8FD27D35D /* Pods-TrailerMakerUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = TrailerMakerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
