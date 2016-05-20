@@ -110,7 +110,7 @@ class EditorViewController: UIViewController {
         session.addInput(input)
         
         let preview = AVCaptureVideoPreviewLayer.init(session: session)
-        preview.connection.videoOrientation = AVCaptureVideoOrientation.LandscapeLeft
+        preview.connection.videoOrientation = AVCaptureVideoOrientation.LandscapeRight
         
         preview.frame = recordView.bounds
         recordView.layer.addSublayer(preview)
