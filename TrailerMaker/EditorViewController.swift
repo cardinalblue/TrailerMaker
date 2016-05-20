@@ -12,6 +12,8 @@ import AVKit
 import AVFoundation
 import FlatUIKit
 import FontAwesome_swift
+import MediaPlayer
+import MobileCoreServices
 
 class EditorViewController: UIViewController {
 
@@ -23,26 +25,32 @@ class EditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        // bottom bar
         self.view.addSubview(bottomToolBar)
         bottomToolBar.snp_makeConstraints { make in
             make.leading.trailing.bottom.equalTo(self.view)
             make.height.equalTo(44)
         }
         
+        // scroll view
         self.view.addSubview(timelineScrollView)
+        timelineScrollView.backgroundColor = UIColor.silverColor()
         timelineScrollView.snp_makeConstraints { make in
             make.leading.trailing.equalTo(self.view)
             make.bottom.equalTo(bottomToolBar.snp_top)
             make.height.equalTo(44)
         }
         
+        // record view
         self.view.addSubview(recordView)
+        recordView.backgroundColor = UIColor.blackColor()
         recordView.snp_makeConstraints { make in
             make.leading.top.equalTo(self.view)
             make.bottom.equalTo(timelineScrollView.snp_top)
             make.width.equalTo(self.view).dividedBy(2)
         }
         
+        // trailer view
         self.view.addSubview(trailerView)
         trailerView.backgroundColor = UIColor.blackColor()
         trailerView.snp_makeConstraints { make in
@@ -51,11 +59,15 @@ class EditorViewController: UIViewController {
             make.width.equalTo(self.view).dividedBy(2)
         }
 
+    
+        // setup bottom bar and buttons
         let flexibleSpaceItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
         
         let recordButton = UIBarButtonItem()
         recordButton.image =  UIImage.fontAwesomeIconWithName(.Circle, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
         recordButton.tintColor = UIColor.alizarinColor()
+        recordButton.target = self;
+        recordButton.action = #selector(record)
         
         let backButton = UIBarButtonItem()
         backButton.image =  UIImage.fontAwesomeIconWithName(.ArrowLeft, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
@@ -74,7 +86,36 @@ class EditorViewController: UIViewController {
     }
     
     internal func record() {
+    
+        playVideo()
+        recordVideo()
+    }
+    
+    internal func back() {
         
+    }
+    
+    internal func done() {
+        
+    }
+    
+    func recordVideo() {
+        let session = AVCaptureSession.init()
+        session.sessionPreset = AVCaptureSessionPresetHigh
+        
+        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        
+        let input = try! AVCaptureDeviceInput.init(device: device)
+        
+        session.addInput(input)
+        
+        let preview = AVCaptureVideoPreviewLayer.init(session: session)
+        preview.connection.videoOrientation = AVCaptureVideoOrientation.LandscapeLeft
+        
+        preview.frame = recordView.bounds
+        recordView.layer.addSublayer(preview)
+        
+        session.startRunning()
     }
     
     private func playVideo() {
@@ -91,24 +132,55 @@ class EditorViewController: UIViewController {
         player.play()
     }
     
-    enum AppError : ErrorType {
-        case InvalidResource(String, String)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func startCameraFromViewController(viewController: UIViewController, withDelegate delegate: protocol<UIImagePickerControllerDelegate, UINavigationControllerDelegate>) -> Bool {
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) == false {
+            return false
+        }
+        
+        let cameraController = UIImagePickerController()
+        cameraController.sourceType = .Camera
+        cameraController.mediaTypes = [kUTTypeMovie as NSString as String]
+        cameraController.allowsEditing = false
+        cameraController.delegate = delegate
+        
+        presentViewController(cameraController, animated: true, completion: nil)
+        return true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func startMediaBrowserFromViewController(viewController: UIViewController, usingDelegate delegate: protocol<UINavigationControllerDelegate, UIImagePickerControllerDelegate>) -> Bool {
+        // 1
+        if UIImagePickerController.isSourceTypeAvailable(.SavedPhotosAlbum) == false {
+            return false
+        }
+        
+        // 2
+        let mediaUI = UIImagePickerController()
+        mediaUI.sourceType = .SavedPhotosAlbum
+        mediaUI.mediaTypes = [kUTTypeMovie as NSString as String]
+        mediaUI.allowsEditing = true
+        mediaUI.delegate = delegate
+        
+        // 3
+        presentViewController(mediaUI, animated: true, completion: nil)
+        return true
     }
-    */
+    
+//    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+////        - (NSUInteger) supportedInterfaceOrientations
+////            {
+////                //Because your app is only landscape, your view controller for the view in your
+////                // popover needs to support only landscape
+////                return ;
+////        }
+//        return UIInterfaceOrientationMask.LandscapeLeft
+//    }
+    
+}
 
+// MARK: - UIImagePickerControllerDelegate
+extension EditorViewController: UIImagePickerControllerDelegate {
+}
+
+// MARK: - UINavigationControllerDelegate
+extension EditorViewController: UINavigationControllerDelegate {
 }
