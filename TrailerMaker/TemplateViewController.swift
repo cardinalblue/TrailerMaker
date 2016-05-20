@@ -57,7 +57,7 @@ class TemplateViewController: UIViewController, UICollectionViewDelegateFlowLayo
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("TemplateCell", forIndexPath: indexPath) as! TemplateCollectionViewCell
         cell.backgroundColor = UIColor.redColor()
         cell.templateImageView.image = trailerCoverPhotos[indexPath.item]
-        cell.templateImageView.contentMode = UIViewContentMode.ScaleAspectFit
+        cell.templateImageView.contentMode = UIViewContentMode.ScaleAspectFill
 
         return cell
     }

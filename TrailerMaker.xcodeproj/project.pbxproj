@@ -14,9 +14,9 @@
 		44353E391CEEA42B007A502F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44353E371CEEA42B007A502F /* LaunchScreen.storyboard */; };
 		44353E441CEEA42B007A502F /* TrailerMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44353E431CEEA42B007A502F /* TrailerMakerTests.swift */; };
 		44353E4F1CEEA42B007A502F /* TrailerMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44353E4E1CEEA42B007A502F /* TrailerMakerUITests.swift */; };
+		4464068A1CEEC2CF00B3C605 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446406891CEEC2CF00B3C605 /* EditorViewController.swift */; };
 		6B2B3DCD1CEEC3AD004636D8 /* TemplateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2B3DCB1CEEC3AD004636D8 /* TemplateCollectionViewCell.swift */; };
 		6B2B3DCE1CEEC3AD004636D8 /* TemplateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2B3DCC1CEEC3AD004636D8 /* TemplateCollectionViewCell.xib */; };
-		4464068A1CEEC2CF00B3C605 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446406891CEEC2CF00B3C605 /* EditorViewController.swift */; };
 		7B7917787D79B28491DA72FC /* Pods_TrailerMakerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFF96A4F496EFE2E9EB05C7 /* Pods_TrailerMakerUITests.framework */; };
 		AEDB83636A1EF3C566C2DE0F /* Pods_TrailerMakerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3006AA9C9E03B6C6D7113CE /* Pods_TrailerMakerTests.framework */; };
 		DA244828C40598028FAA0C8B /* Pods_TrailerMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2202648EBEF3274ACB3B0A02 /* Pods_TrailerMaker.framework */; };
@@ -57,9 +57,9 @@
 		44353E4A1CEEA42B007A502F /* TrailerMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrailerMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44353E4E1CEEA42B007A502F /* TrailerMakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerMakerUITests.swift; sourceTree = "<group>"; };
 		44353E501CEEA42B007A502F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		446406891CEEC2CF00B3C605 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		6B2B3DCB1CEEC3AD004636D8 /* TemplateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewCell.swift; sourceTree = "<group>"; };
 		6B2B3DCC1CEEC3AD004636D8 /* TemplateCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TemplateCollectionViewCell.xib; sourceTree = "<group>"; };
-		446406891CEEC2CF00B3C605 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		6D2EEC581CA137B29BB9D0CB /* Pods-TrailerMakerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailerMakerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrailerMakerUITests/Pods-TrailerMakerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		972259BBEA665360A61E4E45 /* Pods-TrailerMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailerMaker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TrailerMaker/Pods-TrailerMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		A3006AA9C9E03B6C6D7113CE /* Pods_TrailerMakerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailerMakerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,14 +120,11 @@
 		44353E2D1CEEA42B007A502F /* TrailerMaker */ = {
 			isa = PBXGroup;
 			children = (
-				44353E2E1CEEA42B007A502F /* AppDelegate.swift */,
-				44353E301CEEA42B007A502F /* TemplateViewController.swift */,
-				6B2B3DCB1CEEC3AD004636D8 /* TemplateCollectionViewCell.swift */,
-				6B2B3DCC1CEEC3AD004636D8 /* TemplateCollectionViewCell.xib */,
-				446406891CEEC2CF00B3C605 /* EditorViewController.swift */,
-				44353E321CEEA42B007A502F /* Main.storyboard */,
+				6BDBC5991CEEC8A300DC719A /* Controller */,
+				6BDBC5981CEEC89F00DC719A /* View */,
+				6BDBC5961CEEC89000DC719A /* Model */,
 				44353E351CEEA42B007A502F /* Assets.xcassets */,
-				44353E371CEEA42B007A502F /* LaunchScreen.storyboard */,
+				44353E2E1CEEA42B007A502F /* AppDelegate.swift */,
 				44353E3A1CEEA42B007A502F /* Info.plist */,
 			);
 			path = TrailerMaker;
@@ -149,6 +146,33 @@
 				44353E501CEEA42B007A502F /* Info.plist */,
 			);
 			path = TrailerMakerUITests;
+			sourceTree = "<group>";
+		};
+		6BDBC5961CEEC89000DC719A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6BDBC5981CEEC89F00DC719A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B2B3DCC1CEEC3AD004636D8 /* TemplateCollectionViewCell.xib */,
+				44353E321CEEA42B007A502F /* Main.storyboard */,
+				44353E371CEEA42B007A502F /* LaunchScreen.storyboard */,
+				6B2B3DCB1CEEC3AD004636D8 /* TemplateCollectionViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6BDBC5991CEEC8A300DC719A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				44353E301CEEA42B007A502F /* TemplateViewController.swift */,
+				446406891CEEC2CF00B3C605 /* EditorViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		92C58FBFB45CFC436AE987B7 /* Pods */ = {
