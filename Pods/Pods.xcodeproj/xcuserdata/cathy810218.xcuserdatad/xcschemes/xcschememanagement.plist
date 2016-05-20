@@ -4,35 +4,45 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BLKFlexibleHeightBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TrailerMaker.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-TrailerMakerTests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-TrailerMakerUITests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>306FADB010797BC09A6A4F16B81C22E0</key>
+		<key>0C9F43DD06D30030449E36B5B8FE7CAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95216330DABC911292AAFF96497C4011</key>
+		<key>4D502938C67ED7C0A2CDD265C673961C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7AAA83A0B19E9AB585A6FFE3AAF1D304</key>
 		<dict>
 			<key>primary</key>
 			<true/>
