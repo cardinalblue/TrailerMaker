@@ -113,6 +113,8 @@ class EditorViewController: UIViewController {
         let doneButton = UIBarButtonItem()
         doneButton.image =  UIImage.fontAwesomeIconWithName(.Check, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
         doneButton.tintColor = UIColor.nephritisColor()
+        doneButton.target = self
+        doneButton.action = #selector(done)
         
         bottomToolBar.configureFlatToolbarWithColor(UIColor.midnightBlueColor())
         bottomToolBar.items = [backButton, flexibleSpaceItem, recordButton, flexibleSpaceItem, doneButton]
@@ -164,6 +166,7 @@ class EditorViewController: UIViewController {
     }
     
     internal func done() {
+        self.navigationController?.pushViewController(PreviewViewController(), animated: true)
     }
     
     func recordVideo() {
