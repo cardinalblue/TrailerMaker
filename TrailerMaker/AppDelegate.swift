@@ -20,11 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.whiteColor()
         
-        self.window?.rootViewController = TemplateViewController()
-        
-        let nav = UINavigationController.init(rootViewController: EditorViewController());
+        let nav = UINavigationController.init(rootViewController: TemplateViewController());
         nav.setNavigationBarHidden(true, animated: false)
-        
         self.window?.rootViewController = nav
         
         self.window?.makeKeyAndVisible()

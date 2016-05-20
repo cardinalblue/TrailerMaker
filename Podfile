@@ -7,6 +7,7 @@ target 'TrailerMaker' do
   pod 'SnapKit', '~> 0.15.0'
   pod 'FontAwesome.swift'
   pod 'FlatUIKit'
+  pod 'BLKFlexibleHeightBar'
 
   # Pods for TrailerMaker
 

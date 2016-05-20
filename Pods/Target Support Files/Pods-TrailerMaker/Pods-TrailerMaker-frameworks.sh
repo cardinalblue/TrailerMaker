@@ -84,11 +84,13 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/BLKFlexibleHeightBar/BLKFlexibleHeightBar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FlatUIKit/FlatUIKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FontAwesome.swift/FontAwesome_swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/BLKFlexibleHeightBar/BLKFlexibleHeightBar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FlatUIKit/FlatUIKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FontAwesome.swift/FontAwesome_swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"

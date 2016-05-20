@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BLKFlexibleHeightBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FlatUIKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,6 +52,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7AAA83A0B19E9AB585A6FFE3AAF1D304</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9604DF88A2689918E385B37FDDCE2D76</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9E64D3E3A7AD1A87C822114B7473AE1E</key>
 		<dict>
 			<key>primary</key>
@@ -57,17 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B7D7704EEE60BFBB84295A140FF9AE0C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C2A1F92205CB42D98B92DCA11B6A33B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D76488D0BE159E09EB3A66E373CD1492</key>
+		<key>E7CA4C4BC3289CE512666FD18491AAC8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
