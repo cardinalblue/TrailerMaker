@@ -21,6 +21,11 @@ class EditorViewController: UIViewController {
     lazy var trailerView = UIView() // top right
     lazy var timelineScrollView = UIScrollView()
     lazy var bottomToolBar = UIToolbar()
+    lazy var recordButton = UIBarButtonItem()
+    
+    let session = AVCaptureSession.init()
+    let preview = AVCaptureVideoPreviewLayer.init()
+    let videoFileOutput = AVCaptureMovieFileOutput()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +39,41 @@ class EditorViewController: UIViewController {
         
         // scroll view
         self.view.addSubview(timelineScrollView)
-        timelineScrollView.backgroundColor = UIColor.silverColor()
+        timelineScrollView.backgroundColor = UIColor.wetAsphaltColor()
         timelineScrollView.snp_makeConstraints { make in
             make.leading.trailing.equalTo(self.view)
             make.bottom.equalTo(bottomToolBar.snp_top)
-            make.height.equalTo(44)
+            make.height.equalTo(50)
         }
+        
+        let clips = ["12sec : Three People Fight", "8sec : Two People Kiss", "12sec : Two People Chase", "20sec : One Person Jump", "12sec : One Cat Miao"]
+        
+        var previousButton:UIButton = UIButton.init(frame: CGRectZero)
+        
+        for c:String in clips {
+            
+            let button = UIButton()
+            button.setTitle(c, forState: UIControlState.Normal)
+            button.sizeToFit()
+            button.frame = CGRectMake(0, 0, CGRectGetWidth(button.frame) + 8, 34)
+            button.backgroundColor = UIColor.turquoiseColor()
+            button.addTarget(self, action: #selector(buttonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+            button.layer.cornerRadius = 3
+            
+            print("\(NSStringFromCGRect(button.frame))")
+            
+            if (previousButton.frame.origin.x == 0) {
+                button.frame = CGRectMake(16, 8, CGRectGetWidth(button.frame), 34)
+            }
+            else {
+                button.frame = CGRectMake(16 + CGRectGetMaxX(previousButton.frame), 8, CGRectGetWidth(button.frame) + 8, 34)
+            }
+            previousButton = button
+
+            timelineScrollView.addSubview(button)
+        }
+        timelineScrollView.contentSize = CGSizeMake(CGRectGetMaxX(previousButton.frame) + 16, 50)
+        
         
         // record view
         self.view.addSubview(recordView)
@@ -63,8 +97,8 @@ class EditorViewController: UIViewController {
         // setup bottom bar and buttons
         let flexibleSpaceItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
         
-        let recordButton = UIBarButtonItem()
         recordButton.image =  UIImage.fontAwesomeIconWithName(.Circle, textColor: UIColor.blackColor(), size: CGSizeMake(30, 30))
+        recordButton.tag = 0
         recordButton.tintColor = UIColor.alizarinColor()
         recordButton.target = self;
         recordButton.action = #selector(record)
@@ -79,14 +113,27 @@ class EditorViewController: UIViewController {
         
         bottomToolBar.configureFlatToolbarWithColor(UIColor.midnightBlueColor())
         bottomToolBar.items = [backButton, flexibleSpaceItem, recordButton, flexibleSpaceItem, doneButton]
+        
+        // Record Init
+        
+        session.sessionPreset = AVCaptureSessionPresetHigh
+        
+        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        let input = try! AVCaptureDeviceInput.init(device: device)
+        
+        session.addInput(input)
+        preview.session = session
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    internal func record() {
+    internal func buttonClicked() {
+        
+    }
     
+    internal func record() {
         playVideo()
         recordVideo()
     }
@@ -100,22 +147,46 @@ class EditorViewController: UIViewController {
     }
     
     func recordVideo() {
-        let session = AVCaptureSession.init()
-        session.sessionPreset = AVCaptureSessionPresetHigh
         
-        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        let doRecord = recordButton.tag == 0
+        let stopRecord = recordButton.tag == 1
         
-        let input = try! AVCaptureDeviceInput.init(device: device)
+        if doRecord {
+            recordButton.tag = 1
+            
+            // Preview
+            
+            preview.connection.videoOrientation = AVCaptureVideoOrientation.LandscapeRight
+            
+            preview.frame = recordView.bounds
+            recordView.layer.addSublayer(preview)
+            
+            session.startRunning()
+            
+            // Record
+            
+            let recordingDelegate:AVCaptureFileOutputRecordingDelegate? = self
+            
+            session.addOutput(videoFileOutput)
+            
+            let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+            let filePath = documentsURL.URLByAppendingPathComponent("temp")
+            
+            videoFileOutput.startRecordingToOutputFileURL(filePath, recordingDelegate: recordingDelegate)
+        }
         
-        session.addInput(input)
+        if (stopRecord) {
+            recordButton.tag = 0
+            
+            preview.removeFromSuperlayer()
+            
+            videoFileOutput.stopRecording()
+            session.removeOutput(videoFileOutput)
+            
+            session.stopRunning()
+        }
         
-        let preview = AVCaptureVideoPreviewLayer.init(session: session)
-        preview.connection.videoOrientation = AVCaptureVideoOrientation.LandscapeRight
         
-        preview.frame = recordView.bounds
-        recordView.layer.addSublayer(preview)
-        
-        session.startRunning()
     }
     
     private func playVideo() {
@@ -131,50 +202,6 @@ class EditorViewController: UIViewController {
         self.trailerView.layer.addSublayer(playerLayer)
         player.play()
     }
-    
-    func startCameraFromViewController(viewController: UIViewController, withDelegate delegate: protocol<UIImagePickerControllerDelegate, UINavigationControllerDelegate>) -> Bool {
-        if UIImagePickerController.isSourceTypeAvailable(.Camera) == false {
-            return false
-        }
-        
-        let cameraController = UIImagePickerController()
-        cameraController.sourceType = .Camera
-        cameraController.mediaTypes = [kUTTypeMovie as NSString as String]
-        cameraController.allowsEditing = false
-        cameraController.delegate = delegate
-        
-        presentViewController(cameraController, animated: true, completion: nil)
-        return true
-    }
-    
-    func startMediaBrowserFromViewController(viewController: UIViewController, usingDelegate delegate: protocol<UINavigationControllerDelegate, UIImagePickerControllerDelegate>) -> Bool {
-        // 1
-        if UIImagePickerController.isSourceTypeAvailable(.SavedPhotosAlbum) == false {
-            return false
-        }
-        
-        // 2
-        let mediaUI = UIImagePickerController()
-        mediaUI.sourceType = .SavedPhotosAlbum
-        mediaUI.mediaTypes = [kUTTypeMovie as NSString as String]
-        mediaUI.allowsEditing = true
-        mediaUI.delegate = delegate
-        
-        // 3
-        presentViewController(mediaUI, animated: true, completion: nil)
-        return true
-    }
-    
-//    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-////        - (NSUInteger) supportedInterfaceOrientations
-////            {
-////                //Because your app is only landscape, your view controller for the view in your
-////                // popover needs to support only landscape
-////                return ;
-////        }
-//        return UIInterfaceOrientationMask.LandscapeLeft
-//    }
-    
 }
 
 // MARK: - UIImagePickerControllerDelegate
@@ -183,4 +210,16 @@ extension EditorViewController: UIImagePickerControllerDelegate {
 
 // MARK: - UINavigationControllerDelegate
 extension EditorViewController: UINavigationControllerDelegate {
+}
+
+extension EditorViewController: AVCaptureFileOutputRecordingDelegate {
+    func captureOutput(captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAtURL outputFileURL: NSURL!, fromConnections connections: [AnyObject]!, error: NSError!) {
+        print("didFinishRecordingToOutputFileAtURL \(outputFileURL)")
+        return
+    }
+    
+    func captureOutput(captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAtURL fileURL: NSURL!, fromConnections connections: [AnyObject]!) {
+        print("didStartRecordingToOutputFileAtURL \(fileURL)")
+        return
+    }
 }
