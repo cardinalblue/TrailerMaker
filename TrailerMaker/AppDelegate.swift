@@ -21,7 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.whiteColor()
         
         self.window?.rootViewController = TemplateViewController()
-        self.window?.rootViewController = UINavigationController.init(rootViewController: EditorViewController())
+        
+        let nav = UINavigationController.init(rootViewController: EditorViewController());
+        nav.setNavigationBarHidden(true, animated: false)
+        
+        self.window?.rootViewController = nav
+        
         self.window?.makeKeyAndVisible()
         
         return true
