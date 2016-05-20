@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import SnapKit
 
 class EditorViewController: UIViewController {
 
+    lazy var box = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.view.addSubview(box)
+        
+        box.backgroundColor = UIColor.redColor()
+        box.snp_makeConstraints { make in
+            make.width.height.equalTo(50)
+            make.center.equalTo(self.view)
+        }
     }
 
     override func didReceiveMemoryWarning() {
