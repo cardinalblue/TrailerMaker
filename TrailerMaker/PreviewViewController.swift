@@ -25,7 +25,6 @@ class PreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         // bottom bar
         self.view.addSubview(bottomToolBar)
         bottomToolBar.snp_makeConstraints { make in
@@ -77,7 +76,31 @@ class PreviewViewController: UIViewController {
     }
     
     internal func play() {
+
+        guard let path1 = NSBundle.mainBundle().pathForResource("demo1", ofType:"mp4") else {
+            print("error")
+            return
+        }
         
+        let player1 = AVPlayer(URL: NSURL(fileURLWithPath: path1))
+        
+        let playerLayer1 = AVPlayerLayer(player: player1)
+        playerLayer1.frame = self.recordView.bounds
+        self.recordView.layer.addSublayer(playerLayer1)
+        player1.play()
+
+        
+        guard let path = NSBundle.mainBundle().pathForResource("demo", ofType:"mp4") else {
+            print("error")
+            return
+        }
+        
+        let player = AVPlayer(URL: NSURL(fileURLWithPath: path))
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.trailerView.bounds
+        self.trailerView.layer.addSublayer(playerLayer)
+        player.play()
     }
     
     internal func back() {
